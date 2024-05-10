@@ -1,0 +1,105 @@
+\documentclass{IEEEtran}
+\usepackage[T1]{fontenc}
+\usepackage{biblatex}
+\usepackage{listings}
+\addbibresource{Expose.bib}
+
+\begin{document}
+\title{Vergleich von Methoden zur Lösung des Capacitated Vehicle Routing Problems (CVRP)}
+
+\author{\IEEEauthorblockN{Walter Hoos, Alexander Hübler, David Winzer}
+\IEEEauthorblockA{\\Department Sichere Informationssysteme,
+FH Oberösterreich, Campus Hagenberg}}
+
+\maketitle
+
+\begin{abstract}
+    Das Capacitated Vehicle Routing Problem (CVRP) ist ein kombinatorisches 
+    Optimierungsproblem mit vielzähligen praktischen Anwendungen 
+    in der Logistik und Tourenplanung. Ziel ist es, eine kostenminimale Reihe von 
+    Routen für eine Flotte von Lieferfahrzeugen mit begrenzter Kapazität zu finden, 
+    sodass alle Kundennachfragen bedient werden. Das CVRP ist NP-komplex und gehört 
+    zu den am intensivsten erforschten Problemen im Bereich der Tourenplanung, wodurch
+    es eine Vielzahl von Lösungsansätzen gibt. Einige von ihnen sollen in dieser Arbeit
+    miteinander verglichen und evaluiert werden.
+\end{abstract}
+
+\section{Beschreibung des Problems}
+    Das Vehicle Routing Problem (VRP), auch bekannt als das Standardproblem der 
+    Tourenplanung, repräsentiert ein zentrales kombinatorisches Optimierungsproblem 
+    innerhalb der logistischen Planung und des Operations Research. Die grundlegende 
+    Zielsetzung des VRP besteht darin, für eine Flotte von Fahrzeugen
+    die optimale Routenplanung zu ermitteln, um eine Menge von Kundenstandorten unter 
+    Berucksichtigung bestimmter Restriktionen zu beliefern. Diese Restriktionen 
+    können unter anderem die Kapazität der Fahrzeuge, Zeitfenster für die Lieferungen 
+    und die maximale Dauer der Touren umfassen. \newline\newline
+    Konzeptuell stellt das VRP eine Erweiterung des Traveling Salesman Problem (TSP) 
+    dar. Wahrend das TSP die Suche nach der kürzesten, möglichen Route für eine/n 
+    einzelne/n Verkäufer*in, der jede Stadt genau einmal besucht und zum Ausgangspunkt 
+    zurückkehrt, zum Gegenstand hat, erweitert das VRP diese Problemstellung auf mehrere 
+    Fahrzeuge und berücksichtigt zusätzlich eine Reihe von praxisrelevanten 
+    Nebenbedingungen. Das VRP tragt somit einer komplexeren und realitätsnäheren 
+    Anforderung der Tourenplanung Rechnung. Beschrieben wurde dieses Problem erstmals 
+    durch G. B. Dantzig und J. H. Ramser im Jahr 1959. \newline\newline
+    Im Zuge dieser Arbeit soll eine spezifische Instanz des CVRP welche von 
+    P. Augerat\cite{augerat} beschrieben wurde genutzt werden, um die Effektivität 
+    mehrerer Methoden zur Lösung des Problems zu evaluieren. 
+
+    \subsection{A-n80-k10}
+    Bei der Probleminstanz handelt es sich konkret um das Problem A-n80-k10 aus dem Set A\footnote{\url{http://www.vrp-rep.org/datasets/download/augerat-1995-set-a.zip}}. 
+    
+
+\section{Beschreibung der verwendeten Werkzeuge (Methodik)}
+    Zur Lösung des CVRP gibt es verschiedene Methoden und Verfahren. 
+    Einige der bekanntesten Methoden gehören zur Kategorie der heuristischen
+    Algorithmen, wobei diese sich in zwei Hauptgruppen
+    unterteilen lassen:\newline\newline
+    1. Konstruktive Heuristiken: Diese Algorithmen erstellen iterativ eine zulässige 
+    Lösung, indem sie schrittweise Kunden zu Routen hinzufügen. Gängige 
+    Konstruktionsheuristiken für das CVRP sind beispielsweise die Savings-Heuristik, 
+    die Sweep-Heuristik und die Cluster-First, Route-Second-Methode. \newline\newline
+    2. Verbesserungsheuristiken: Diese Heuristiken nehmen eine bereits existierende 
+    zulässige Lösung und versuchen, diese iterativ durch lokale Suchoperationen zu 
+    verbessern. Bekannte Verbesserungsheuristiken für das CVRP sind unter anderem die 
+    $\lambda$-Interchange-Heuristik, die Or-Opt-Heuristik und die Tabu-Suche.
+\subsection{Offspring Selection Genetic Algorithm (OSGA)}
+
+
+\subsection{Google OR-Tools}
+Die Google OR-Tools sind eine Open-Source-Software-Suite für Operations 
+Research, die von Google entwickelt und bereitgestellt wird. Sie bietet eine Reihe von 
+Algorithmen und Modellierungshilfen für verschiedene Optimierungsprobleme, darunter 
+auch Lösungsansätze für das Capacitated Vehicle Routing Problem (CVRP). \newline\newline
+Die OR-Tools sind in mehreren Programmiersprachen wie C++, Python und Java verfügbar und 
+ermöglichen so eine unkomplizierte Integration in bestehende Softwaresysteme. Zudem bieten 
+sie leistungsfähige Visualisierungsmöglichkeiten zur Darstellung der berechneten Routen.\newline\newline
+Die Implementierung des CVRP in den Google OR-Tools erfolgt durch die Verwendung des 
+integrierten Routing-Moduls. Dieses Modul bietet verschiedene Algorithmen und Heuristiken, 
+die speziell für Routing-Probleme entwickelt wurden.
+
+\subsection{Programming Z3}
+Der Z3 Solver ist ein leistungsfähiges Satisfiability-Modulo-Theories (SMT) Werkzeug, 
+das von Microsoft Research entwickelt wurde. Es findet breite Anwendung in verschiedenen 
+Bereichen, wie der formalen Verifikation, der symbolischen Ausführung und der 
+Constraint-Programmierung. Im Kontext des Capacitated Vehicle Routing Problems (CVRP) wird
+der Z3 Solver als Optimierungsmodul eingesetzt, um effiziente Lösungen für dieses Problem
+zu finden.
+
+\section{Ergebnisse}
+
+
+\section{Conclusio}
+% Conclusion content goes here
+
+\printbibliography
+
+
+\appendix
+\section{A-n80-k10}
+\lstinputlisting{../Problem/problem.py}
+
+\section{Code}
+\subsection{Z3}
+\subsection{Or-Tools}
+
+\end{document}
